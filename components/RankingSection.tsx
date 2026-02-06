@@ -66,13 +66,13 @@ const SmallListSection: React.FC<{ title: string; items: any[]; tabbed?: string[
       </div>
       <ul className="mt-5 space-y-4">
         {items.map((item, idx) => (
-          <li key={idx} className="flex justify-between items-center group cursor-pointer text-lg">
-            <div className="flex items-center space-x-3">
+          <li key={idx} className="flex justify-between items-center group cursor-pointer">
+            <div className="flex items-center space-x-3 flex-1 min-w-0 mr-4">
               <span className="w-1.5 h-1.5 bg-gray-300 rounded-none group-hover:bg-red-600 transition-colors shrink-0"></span>
-              <span className="text-gray-500 font-bold">[{item.category}]</span>
-              <span className="text-gray-800 truncate group-hover:text-red-700 font-medium">{item.title}</span>
+              <span className="text-gray-500 font-bold whitespace-nowrap">[{item.category}]</span>
+              <span className="text-gray-800 truncate group-hover:text-red-700 font-medium text-xl leading-none">{item.title}</span>
             </div>
-            <span className="text-gray-400 text-sm ml-6">{item.date}</span>
+            <span className="text-gray-400 text-lg font-mono whitespace-nowrap">{item.date}</span>
           </li>
         ))}
       </ul>

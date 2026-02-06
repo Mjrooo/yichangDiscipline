@@ -58,13 +58,15 @@ const Section: React.FC<{ title: string; items: any[]; tabbed?: string[] }> = ({
     <Header title={title} tabbed={tabbed} />
     <ul className="mt-5 space-y-4">
       {items.map((item, idx) => (
-        <li key={idx} className="flex justify-between items-center group cursor-pointer text-lg border-b border-gray-50 pb-3 last:border-0">
-          <div className="flex items-center space-x-4 overflow-hidden">
+        <li key={idx} className="flex justify-between items-center group cursor-pointer border-b border-gray-50 pb-3 last:border-0">
+          {/* 左侧文字容器：使用 flex-1 和 min-w-0 确保内层 truncate 生效 */}
+          <div className="flex items-center space-x-4 overflow-hidden flex-1 min-w-0 mr-6">
             <span className="w-1.5 h-1.5 bg-gray-300 rounded-none group-hover:bg-red-600 transition-colors shrink-0"></span>
-            {item.category && <span className="text-red-800/60 font-bold whitespace-nowrap min-w-[80px]">[{item.category}]</span>}
-            <span className="text-gray-800 truncate group-hover:text-red-700 font-medium">{item.title}</span>
+            {item.category && <span className="text-red-800/60 font-bold whitespace-nowrap">[{item.category}]</span>}
+            <span className="text-gray-800 truncate group-hover:text-red-700 font-medium text-xl leading-none">{item.title}</span>
           </div>
-          <span className="text-gray-400 text-sm ml-8 font-mono">{item.date}</span>
+          {/* 日期字体放大至 text-lg 与 标题 text-xl 更匹配 */}
+          <span className="text-gray-400 text-lg font-mono whitespace-nowrap">{item.date}</span>
         </li>
       ))}
     </ul>
