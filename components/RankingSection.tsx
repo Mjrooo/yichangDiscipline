@@ -22,7 +22,7 @@ const RankingSection: React.FC = () => {
                    <button className="text-gray-600 px-3 py-1 hover:bg-gray-200">派驻(出)机构</button>
                </div>
             </div>
-            <a href="#" className="ml-auto text-gray-400 text-xs hover:text-red-600">更多 &raquo;</a>
+            <a href="#" className="ml-auto text-gray-400 text-xs hover:text-red-600">更多 >></a>
         </div>
         
         <div className="grid grid-cols-3 gap-y-4">
@@ -57,7 +57,7 @@ const SmallListSection: React.FC<{ title: string; items: any[]; tabbed?: string[
             <span key={tab} className="ml-6 text-gray-400 hover:text-red-600 cursor-pointer text-xs">{tab}</span>
           ))}
         </div>
-        <a href="#" className="text-gray-400 text-[10px] hover:text-red-600">更多 &raquo;</a>
+        <a href="#" className="text-gray-400 text-[10px] hover:text-red-600">更多 >></a>
       </div>
       <ul className="mt-3 space-y-2">
         {items.map((item, idx) => (

@@ -33,7 +33,7 @@ const BannerSection: React.FC = () => {
             <button className="px-6 py-2 border-b-2 border-red-600 text-red-700 font-bold text-base">重要新闻</button>
             <button className="px-6 py-2 text-gray-500 hover:text-red-600 text-base">工作动态</button>
             <div className="ml-auto flex items-center pr-2">
-                <a href="#" className="text-gray-400 text-xs hover:text-red-600">更多 &raquo;</a>
+                <a href="#" className="text-gray-400 text-xs hover:text-red-600">更多 >></a>
             </div>
         </div>
         <div className="space-y-6 px-2">
@@ -55,7 +55,7 @@ const BannerSection: React.FC = () => {
             </ul>
         </div>
         <div className="mt-auto text-right pr-2 pb-2">
-            <a href="#" className="text-gray-400 text-xs hover:text-red-600">查看详情 &raquo;</a>
+            <a href="#" className="text-gray-400 text-xs hover:text-red-600">查看详情 >></a>
         </div>
       </div>
     </section>
