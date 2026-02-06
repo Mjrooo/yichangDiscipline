@@ -4,40 +4,45 @@ import { RANKINGS, MOCK_COUNTY_LIST } from '../constants';
 
 const RankingSection: React.FC = () => {
   return (
-    <div className="grid grid-cols-12 gap-8">
-      {/* Small News Lists */}
-      <div className="col-span-5 space-y-8">
-        <SmallListSection title="干部任免" tabbed={["机关党建"]} items={MOCK_COUNTY_LIST.slice(0, 5)} />
+    <div className="grid grid-cols-12 gap-16">
+      <div className="col-span-5 space-y-12">
+        <SmallListSection title="干部任免" tabbed={["机关党建"]} items={MOCK_COUNTY_LIST.slice(0, 6)} />
+        <div className="p-10 bg-red-50/50 border border-red-100">
+           <h4 className="text-red-800 font-bold text-xl mb-4">监督举报专区</h4>
+           <div className="flex space-x-4">
+              <button className="flex-1 bg-red-700 text-white py-4 font-bold text-lg hover:bg-red-800 transition-colors">网上举报</button>
+              <button className="flex-1 bg-white border-2 border-red-700 text-red-700 py-4 font-bold text-lg hover:bg-red-50 transition-colors">流程查询</button>
+           </div>
+        </div>
       </div>
 
-      {/* Rankings List */}
       <div className="col-span-7">
-        <div className="flex items-center border-b border-gray-200 pb-2 mb-4">
-            <div className="w-1.5 h-5 bg-red-600 mr-2 rounded-none"></div>
-            <div className="flex items-center space-x-4">
-               <span className="text-red-700 font-bold">一月排行榜</span>
-               <div className="flex bg-gray-100 rounded-none text-xs overflow-hidden border border-gray-200">
-                   <button className="bg-red-600 text-white px-3 py-1 font-medium">县市区纪委监委</button>
-                   <button className="text-gray-600 px-3 py-1 hover:bg-gray-200">机关部室</button>
-                   <button className="text-gray-600 px-3 py-1 hover:bg-gray-200">派驻(出)机构</button>
+        <div className="flex items-center border-b-2 border-gray-100 pb-3 mb-8">
+            <div className="w-2 h-7 bg-red-700 mr-4"></div>
+            <div className="flex items-center space-x-8">
+               <span className="text-red-800 font-black text-2xl">信息发布排行榜</span>
+               <div className="flex bg-gray-100 p-1 rounded-none text-sm font-bold border border-gray-200">
+                   <button className="bg-red-700 text-white px-6 py-2">县市区纪委监委</button>
+                   <button className="text-gray-600 px-6 py-2 hover:bg-gray-200 transition-colors">委机关部室</button>
+                   <button className="text-gray-600 px-6 py-2 hover:bg-gray-200 transition-colors">派驻机构</button>
                </div>
             </div>
-            <a href="#" className="ml-auto text-gray-400 text-xs hover:text-red-600">更多 &raquo;</a>
+            <a href="#" className="ml-auto text-gray-400 text-sm hover:text-red-700">更多 &raquo;</a>
         </div>
         
-        <div className="grid grid-cols-3 gap-y-4">
-            <div className="flex flex-col justify-center items-center border-r border-gray-100 space-y-2">
-                <span className="text-red-600 font-bold text-sm">发布量</span>
-                <span className="text-gray-400 text-xs">访问量</span>
+        <div className="grid grid-cols-3 gap-12 bg-gray-50/30 p-8 border border-gray-100">
+            <div className="flex flex-col justify-center items-center border-r border-gray-200 space-y-4">
+                <span className="text-red-700 font-black text-2xl">月度发布统计</span>
+                <span className="text-gray-400 text-sm tracking-widest font-bold">DATA STATISTICS</span>
             </div>
-            <div className="col-span-2 grid grid-cols-3 gap-x-4 gap-y-3 pl-4">
-                {RANKINGS.map((rank) => (
-                    <div key={rank.id} className="flex items-center space-x-2">
-                        <span className={`flex items-center justify-center w-5 h-5 rounded-none text-[10px] font-bold ${rank.id <= 3 ? 'bg-red-600 text-white' : 'bg-gray-200 text-gray-500'}`}>
+            <div className="col-span-2 grid grid-cols-2 gap-x-12 gap-y-6">
+                {RANKINGS.slice(0, 10).map((rank) => (
+                    <div key={rank.id} className="flex items-center space-x-4 border-b border-gray-100 pb-2 group">
+                        <span className={`flex items-center justify-center w-8 h-8 rounded-none text-sm font-black ${rank.id <= 3 ? 'bg-red-700 text-white shadow-sm' : 'bg-gray-200 text-gray-500'}`}>
                             {rank.id}
                         </span>
-                        <span className="text-[13px] text-gray-700 truncate">{rank.name}</span>
-                        <span className="text-[13px] text-red-600 font-mono font-bold ml-auto">{rank.score}</span>
+                        <span className="text-xl text-gray-800 truncate group-hover:text-red-700 transition-colors font-bold">{rank.name}</span>
+                        <span className="text-xl text-red-700 font-black font-mono ml-auto tracking-tighter">{rank.score}</span>
                     </div>
                 ))}
             </div>
@@ -49,25 +54,25 @@ const RankingSection: React.FC = () => {
 
 const SmallListSection: React.FC<{ title: string; items: any[]; tabbed?: string[] }> = ({ title, items, tabbed }) => (
     <div>
-      <div className="flex items-center justify-between border-b border-gray-200 pb-1">
+      <div className="flex items-center justify-between border-b-2 border-gray-100 pb-2">
         <div className="flex items-center">
-          <div className="w-1.5 h-5 bg-red-600 mr-2 rounded-none"></div>
-          <h3 className="text-red-700 font-bold text-sm">{title}</h3>
+          <div className="w-2 h-7 bg-red-700 mr-4"></div>
+          <h3 className="text-red-800 font-black text-xl">{title}</h3>
           {tabbed && tabbed.map(tab => (
-            <span key={tab} className="ml-6 text-gray-400 hover:text-red-600 cursor-pointer text-xs">{tab}</span>
+            <span key={tab} className="ml-8 text-gray-500 hover:text-red-700 cursor-pointer text-base font-medium">{tab}</span>
           ))}
         </div>
-        <a href="#" className="text-gray-400 text-[10px] hover:text-red-600">更多 &raquo;</a>
+        <a href="#" className="text-gray-400 text-xs hover:text-red-700">更多 &raquo;</a>
       </div>
-      <ul className="mt-3 space-y-2">
+      <ul className="mt-5 space-y-4">
         {items.map((item, idx) => (
-          <li key={idx} className="flex justify-between items-center group cursor-pointer text-[12px]">
-            <div className="flex items-center space-x-2">
-              <span className="w-1 h-1 bg-gray-300 rounded-none group-hover:bg-red-600 transition-colors"></span>
-              <span className="text-gray-400">{item.category}:</span>
-              <span className="text-gray-700 truncate group-hover:text-red-600 font-medium">{item.title}</span>
+          <li key={idx} className="flex justify-between items-center group cursor-pointer text-lg">
+            <div className="flex items-center space-x-3">
+              <span className="w-1.5 h-1.5 bg-gray-300 rounded-none group-hover:bg-red-600 transition-colors shrink-0"></span>
+              <span className="text-gray-500 font-bold">[{item.category}]</span>
+              <span className="text-gray-800 truncate group-hover:text-red-700 font-medium">{item.title}</span>
             </div>
-            <span className="text-gray-400 ml-4">{item.date}</span>
+            <span className="text-gray-400 text-sm ml-6">{item.date}</span>
           </li>
         ))}
       </ul>
