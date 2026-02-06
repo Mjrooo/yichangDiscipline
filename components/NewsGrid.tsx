@@ -48,7 +48,7 @@ const Header: React.FC<{ title: string; tabbed?: string[] }> = ({ title, tabbed 
         <span key={tab} className="ml-6 text-gray-400 hover:text-red-600 cursor-pointer text-sm">{tab}</span>
       ))}
     </div>
-    <a href="#" className="text-gray-400 text-[10px] hover:text-red-600">更多 >></a>
+    <a href="#" className="text-gray-400 text-[10px] hover:text-red-600">更多 &raquo;</a>
   </div>
 );
 
