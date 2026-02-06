@@ -29,14 +29,14 @@ export const SPECIAL_TOPICS: BannerItem[] = Array(8).fill(null).map((_, i) => ({
 }));
 
 export const RANKINGS: RankItem[] = [
-  { id: 1, name: "长阳县", score: 8 },
-  { id: 2, name: "远安县", score: 6 },
-  { id: 3, name: "枝江市", score: 5 },
-  { id: 4, name: "伍家岗区", score: 5 },
-  { id: 5, name: "点军区", score: 4 },
-  { id: 6, name: "长阳县", score: 8 },
-  { id: 7, name: "远安县", score: 6 },
-  { id: 8, name: "枝江市", score: 5 },
-  { id: 9, name: "伍家岗区", score: 5 },
-  { id: 10, name: "点军区", score: 4 },
+  { id: 1, name: "长阳县", releaseCount: 456, visitCount: 8920 },
+  { id: 2, name: "远安县", releaseCount: 412, visitCount: 7540 },
+  { id: 3, name: "枝江市", releaseCount: 389, visitCount: 6810 },
+  { id: 4, name: "伍家岗区", releaseCount: 350, visitCount: 5200 },
+  { id: 5, name: "点军区", releaseCount: 320, visitCount: 4800 },
+  { id: 6, name: "夷陵区", releaseCount: 310, visitCount: 4600 },
+  { id: 7, name: "当阳市", releaseCount: 290, visitCount: 4200 },
+  { id: 8, name: "宜都市", releaseCount: 275, visitCount: 3900 },
+  { id: 9, name: "兴山县", releaseCount: 260, visitCount: 3500 },
+  { id: 10, name: "秭归县", releaseCount: 240, visitCount: 3100 },
 ];

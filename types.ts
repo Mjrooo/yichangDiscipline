@@ -14,5 +14,6 @@ export interface BannerItem {
 export interface RankItem {
   id: number;
   name: string;
-  score: number;
+  releaseCount: number;
+  visitCount: number;
 }
